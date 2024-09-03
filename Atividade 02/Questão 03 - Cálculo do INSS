@@ -3,18 +3,18 @@ import java.util.Scanner;
 public class CalculoINSS {
 
     public static void main(String[] args) {
-        // Criar um objeto Scanner para ler a entrada do usuário
+        
         Scanner scanner = new Scanner(System.in);
 
-        // Solicitar ao usuário o salário bruto
+       
         System.out.print("Digite seu salário bruto: R$ ");
         double salarioBruto = scanner.nextDouble();
 
-        // Inicializar variáveis
+        
         double contribuicaoINSS = 0.0;
         double salarioLiquido;
 
-        // Calcular a contribuição ao INSS com base nas faixas salariais
+       
         if (salarioBruto <= 1302.00) {
             contribuicaoINSS = salarioBruto * 0.075;
         } else if (salarioBruto <= 2571.29) {
@@ -25,14 +25,14 @@ public class CalculoINSS {
             contribuicaoINSS = (1302.00 * 0.075) + ((2571.29 - 1302.00) * 0.09) + ((3856.94 - 2571.29) * 0.12) + ((salarioBruto - 3856.94) * 0.14);
         }
 
-        // Calcular o salário líquido
+      
         salarioLiquido = salarioBruto - contribuicaoINSS;
 
-        // Exibir os resultados
+        
         System.out.printf("Valor da contribuição ao INSS: R$ %.2f\n", contribuicaoINSS);
         System.out.printf("Salário líquido: R$ %.2f\n", salarioLiquido);
 
-        // Fechar o Scanner
+        
         scanner.close();
     }
 }
