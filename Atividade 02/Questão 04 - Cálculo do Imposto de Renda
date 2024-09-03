@@ -3,17 +3,17 @@ import java.util.Scanner;
 public class CalculoIRRF {
 
     public static void main(String[] args) {
-        // Criar um objeto Scanner para ler a entrada do usuário
+        
         Scanner scanner = new Scanner(System.in);
 
-        // Solicitar ao usuário o salário bruto
+        
         System.out.print("Digite seu salário bruto: R$ ");
         double salarioBruto = scanner.nextDouble();
 
-        // Inicializar variáveis
+       
         double impostoDeRenda = 0.0;
 
-        // Calcular o imposto de renda com base nas faixas salariais
+        
         if (salarioBruto <= 1903.98) {
             impostoDeRenda = 0.0; // Isento
         } else if (salarioBruto <= 2826.65) {
@@ -26,10 +26,10 @@ public class CalculoIRRF {
             impostoDeRenda = (salarioBruto - 4664.68) * 0.275 - 869.36;
         }
 
-        // Exibir o valor do imposto de renda
+        
         System.out.printf("Valor do imposto de renda descontado: R$ %.2f\n", impostoDeRenda);
 
-        // Fechar o Scanner
+       
         scanner.close();
     }
 }
