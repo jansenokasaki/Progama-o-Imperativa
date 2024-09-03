@@ -3,40 +3,40 @@ import java.util.Scanner;
 public class CalculadoraSimples {
 
     public static void main(String[] args) {
-        // Criar um objeto Scanner para ler a entrada do usuário
+        
         Scanner scanner = new Scanner(System.in);
 
-        // Solicitar ao usuário o primeiro número
+       
         System.out.print("Digite o primeiro número: ");
         int numero1 = scanner.nextInt();
 
-        // Solicitar ao usuário o segundo número
+       
         System.out.print("Digite o segundo número: ");
         int numero2 = scanner.nextInt();
 
-        // Calcular soma, subtração, multiplicação e divisão
+        
         int soma = numero1 + numero2;
         int subtracao = numero1 - numero2;
         int multiplicacao = numero1 * numero2;
 
-        // Verificar se o denominador é zero antes de realizar a divisão
+        
         if (numero2 != 0) {
             double divisao = (double) numero1 / numero2;
-            // Exibir os resultados
+           
             System.out.println("Soma: " + soma);
             System.out.println("Subtração: " + subtracao);
             System.out.println("Multiplicação: " + multiplicacao);
             System.out.println("Divisão: " + divisao);
         } else {
-            // Caso o denominador seja zero
+        
             System.out.println("Divisão não pode ser realizada. O denominador é zero.");
-            // Exibir os resultados exceto a divisão
+            
             System.out.println("Soma: " + soma);
             System.out.println("Subtração: " + subtracao);
             System.out.println("Multiplicação: " + multiplicacao);
         }
 
-        // Fechar o Scanner
+        
         scanner.close();
     }
 }
