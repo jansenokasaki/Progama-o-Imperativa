@@ -3,40 +3,40 @@ import java.util.Scanner;
 public class NumerosParesEImpares {
 
     public static void main(String[] args) {
-        // Criar um objeto Scanner para ler a entrada do usuário
+        
         Scanner scanner = new Scanner(System.in);
 
-        // Solicitar ao usuário o primeiro número
+        
         System.out.print("Digite o primeiro número inteiro: ");
         int numero1 = scanner.nextInt();
 
-        // Solicitar ao usuário o segundo número
+        
         System.out.print("Digite o segundo número inteiro: ");
         int numero2 = scanner.nextInt();
 
-        // Encontrar o menor e o maior número dos dois fornecidos
+        
         int menor = Math.min(numero1, numero2);
         int maior = Math.max(numero1, numero2);
 
-        // Exibir números pares
+        
         System.out.println("Números pares entre " + menor + " e " + maior + ":");
         for (int i = menor; i <= maior; i++) {
             if (i % 2 == 0) {
                 System.out.print(i + " ");
             }
         }
-        System.out.println(); // Linha em branco para separação
+        System.out.println(); 
 
-        // Exibir números ímpares
+        
         System.out.println("Números ímpares entre " + menor + " e " + maior + ":");
         for (int i = menor; i <= maior; i++) {
             if (i % 2 != 0) {
                 System.out.print(i + " ");
             }
         }
-        System.out.println(); // Linha em branco para separação
+        System.out.println(); 
 
-        // Fechar o Scanner
+        
         scanner.close();
     }
 }
