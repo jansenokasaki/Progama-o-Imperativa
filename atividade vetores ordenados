@@ -58,7 +58,7 @@ public class ExercicioVetor {
     }
     
     public static void imprimirFrequencias(int[] vetor) {
-        int[] contagem = new int[11]; // Para números de 1 a 10
+        int[] contagem = new int[11]; 
         Arrays.stream(vetor).forEach(i -> contagem[i]++);
         
         for (int i = 1; i < contagem.length; i++) {
