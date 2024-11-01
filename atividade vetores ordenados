@@ -1,0 +1,74 @@
+import java.util.Arrays;
+import java.util.Random;
+
+public class ExercicioVetor {
+    
+    public static void main(String[] args) {
+        int[] vetor = criarVetor();
+        ordenarVetor(vetor);
+        
+        int menor = encontrarMenor(vetor);
+        int maior = encontrarMaior(vetor);
+        double mediana = calcularMediana(vetor);
+        
+        System.out.println("Menor valor: " + menor);
+        System.out.println("Maior valor: " + maior);
+        System.out.println("Mediana: " + mediana);
+        
+        imprimirFrequencias(vetor);
+        
+        int[] vetorSemRepetidos = criarVetorSemRepetidos(vetor);
+        System.out.println("Vetor sem valores repetidos: " + Arrays.toString(vetorSemRepetidos));
+    }
+    
+    public static int[] criarVetor() {
+        Random random = new Random();
+        int[] vetor = new int[50];
+        Arrays.setAll(vetor, i -> random.nextInt(10) + 1);
+        return vetor;
+    }
+    
+    public static void ordenarVetor(int[] vetor) {
+        for (int i = 0; i < vetor.length - 1; i++) {
+            for (int j = 0; j < vetor.length - 1 - i; j++) {
+                if (vetor[j] > vetor[j + 1]) {
+                    int temp = vetor[j];
+                    vetor[j] = vetor[j + 1];
+                    vetor[j + 1] = temp;
+                }
+            }
+        }
+    }
+    
+    public static int encontrarMenor(int[] vetor) {
+        return Arrays.stream(vetor).min().orElseThrow();
+    }
+    
+    public static int encontrarMaior(int[] vetor) {
+        return Arrays.stream(vetor).max().orElseThrow();
+    }
+    
+    public static double calcularMediana(int[] vetor) {
+        Arrays.sort(vetor);
+        if (vetor.length % 2 == 0) {
+            return (vetor[vetor.length / 2 - 1] + vetor[vetor.length / 2]) / 2.0;
+        } else {
+            return vetor[vetor.length / 2];
+        }
+    }
+    
+    public static void imprimirFrequencias(int[] vetor) {
+        int[] contagem = new int[11]; // Para números de 1 a 10
+        Arrays.stream(vetor).forEach(i -> contagem[i]++);
+        
+        for (int i = 1; i < contagem.length; i++) {
+            if (contagem[i] > 0) {
+                System.out.println("Valor " + i + ": " + contagem[i] + " vezes");
+            }
+        }
+    }
+    
+    public static int[] criarVetorSemRepetidos(int[] vetor) {
+        return Arrays.stream(vetor).distinct().toArray();
+    }
+}
